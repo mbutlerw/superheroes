@@ -2,7 +2,7 @@ require_relative 'powers.rb'
 require_relative 'supervillain'
 require_relative 'battle'
 
-class Superhero
+class SuperVillain
 
   include Powers
   include Battle
@@ -15,19 +15,13 @@ class Superhero
   end
 
   def use_power
-    p "#{ @name } is now #{@power}!"
+    p "#{ @name } is now #{@power}, maniacally!"
   end
+
 end
 
-flash = Superhero.new("The Flash", "super_speed")
-flash.use_power
-
-
-dr_strange = Superhero.new("Dr. Strange", "magic")
-dr_strange.use_power
-dr_strange.do_battle(flash)
+killer_croc = SuperVillain.new("Killer Croc", "super_speed")
+killer_croc.use_power
 
 dr_doom = SuperVillain.new("DR. DOOM", "magic")
 dr_doom.use_power
-
-flash.do_battle(dr_doom)
